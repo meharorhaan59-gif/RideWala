@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.875rem;
+    /* Dark theme - always on */
+    --background: 0.095 0.008 250;
+    --foreground: 0.971 0.006 240;
+    --card: 0.148 0.013 240;
+    --card-foreground: 0.971 0.006 240;
+    --popover: 0.148 0.013 240;
+    --popover-foreground: 0.971 0.006 240;
+    --primary: 0.795 0.196 150;
+    --primary-foreground: 0.095 0.008 250;
+    --secondary: 0.18 0.015 245;
+    --secondary-foreground: 0.971 0.006 240;
+    --muted: 0.225 0.018 240;
+    --muted-foreground: 0.706 0.014 240;
+    --accent: 0.795 0.196 150;
+    --accent-foreground: 0.095 0.008 250;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.225 0.018 240;
+    --input: 0.18 0.015 245;
+    --ring: 0.795 0.196 150;
+    --brand: 0.795 0.196 150;
+    --brand-yellow: 0.826 0.176 80;
+    --brand-teal: 0.725 0.146 165;
+    --chart-1: 0.795 0.196 150;
+    --chart-2: 0.725 0.146 165;
+    --chart-3: 0.826 0.176 80;
+    --chart-4: 0.706 0.014 240;
+    --chart-5: 0.577 0.245 27.325;
+    --sidebar: 0.148 0.013 240;
+    --sidebar-foreground: 0.971 0.006 240;
+    --sidebar-primary: 0.795 0.196 150;
+    --sidebar-primary-foreground: 0.095 0.008 250;
+    --sidebar-accent: 0.225 0.018 240;
+    --sidebar-accent-foreground: 0.971 0.006 240;
+    --sidebar-border: 0.225 0.018 240;
+    --sidebar-ring: 0.795 0.196 150;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.5;
+  }
+}
+
+@keyframes drive-along {
+  0% {
+    stroke-dashoffset: 200;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+.map-route {
+  stroke-dasharray: 8 4;
+  animation: drive-along 2s linear infinite;
+}
